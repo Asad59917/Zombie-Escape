@@ -42,11 +42,26 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void RotationTowardsTarget()
     {
+        if (targetDirection == Vector2.zero) 
+        {
+            return;
+        }
 
+        Quaternion targetRotation = Quaternion.LookRotation(transform.forward, targetDirection);
+        Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, RotationSpeed * Time.deltaTime);
+
+        rigidbody2d.SetRotation(rotation);
     }
 
     private void SetVelocity()
     {
-        
+        if (targetDirection == Vector2.zero)
+        {
+            rigidbody2d.velocity = Vector2.zero;
+        }
+        else
+        {
+            rigidbody2d.velocity = transform.up * Speed;
+        }
     }
 }

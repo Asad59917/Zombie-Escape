@@ -24,7 +24,7 @@ public class PlayerAwarnessController : MonoBehaviour
         Vector2 enemyToPlayerVector = player.position - transform.position;
         DirectionOfPlayer = enemyToPlayerVector.normalized;
 
-        if (enemyToPlayerVector.magnitude > PlayerAwarnessDistance)
+        if (enemyToPlayerVector.magnitude <= PlayerAwarnessDistance)
         {
             AwarnessOfPlayer = true;
         }
