@@ -41,3 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 176286513
+    locked: 0
+  - name: 'player '
+    uniqueID: 3096393847
+    locked: 0
+  - name: Zombies
+    uniqueID: 2663271989
+    locked: 0
+  - name: Cars
+    uniqueID: 2482358543
+    locked: 0
+  - name: Dead Players
+    uniqueID: 1345050141
+    locked: 0
