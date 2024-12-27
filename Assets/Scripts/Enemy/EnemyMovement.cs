@@ -47,7 +47,7 @@ public class EnemyBehaviourScript : MonoBehaviour
             Quaternion rotaion = Quaternion.AngleAxis(angleChange, transform.forward);  
             targetDirection = rotaion * targetDirection;
 
-            ChangeDirectionCooldown = UnityEngine.Random.Range(0f, 2f);
+            ChangeDirectionCooldown = UnityEngine.Random.Range(1f, 2f);
         }
     }
 
