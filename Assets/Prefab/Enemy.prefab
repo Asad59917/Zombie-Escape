@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f2bef76c84eea4aaabcc6fe816a84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerAwarnessDistance: 5
+  PlayerAwarnessDistance: 10.21
 --- !u!58 &7514392717881746106
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -209,7 +209,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.47
+  m_Radius: 0.72
 --- !u!114 &-3368723191584595786
 MonoBehaviour:
   m_ObjectHideFlags: 0
