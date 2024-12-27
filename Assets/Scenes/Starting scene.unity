@@ -1394,6 +1394,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 3213031528734539774, guid: b9f5b3cffeecd3a48a0a108131dd50ff, type: 3}
   BulletSpeed: 8
+  BulletPosition: {fileID: 1535293224}
+  TimeBtwnShots: 0.1
 --- !u!4 &665825109 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3408615534205612862, guid: d43cace739b40f04b90561c604e3d06a, type: 3}

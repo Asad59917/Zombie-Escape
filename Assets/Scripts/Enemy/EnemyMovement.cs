@@ -14,11 +14,14 @@ public class EnemyBehaviourScript : MonoBehaviour
     private Rigidbody2D rigidbody2d;
     private PlayerAwarnessController _playerAwarnessController;
     private Vector2 targetDirection;
+    private float ChangeDirectionCooldown;
+
 
     private void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         _playerAwarnessController = GetComponent<PlayerAwarnessController>();
+        targetDirection = transform.up;
     }
 
     private void FixedUpdate()
@@ -30,22 +33,34 @@ public class EnemyBehaviourScript : MonoBehaviour
 
     private void UpdateTargetDirection() 
     {
+        EnemyRndomDirectionChange();
+        PlayerTargeting();
+    }
+
+    private void EnemyRndomDirectionChange()
+    {
+        ChangeDirectionCooldown -= Time.deltaTime;
+
+        if (ChangeDirectionCooldown <= 0)
+        {
+            float angleChange = UnityEngine.Random.Range(-90f, 90f); 
+            Quaternion rotaion = Quaternion.AngleAxis(angleChange, transform.forward);  
+            targetDirection = rotaion * targetDirection;
+
+            ChangeDirectionCooldown = UnityEngine.Random.Range(0f, 2f);
+        }
+    }
+
+    private void PlayerTargeting() 
+    {
         if (_playerAwarnessController.AwarnessOfPlayer)
         {
             targetDirection = _playerAwarnessController.DirectionOfPlayer;
-        }
-        else 
-        {
-            targetDirection = Vector2.zero;
         }
     }
 
     private void RotationTowardsTarget()
     {
-        if (targetDirection == Vector2.zero) 
-        {
-            return;
-        }
 
         Quaternion targetRotation = Quaternion.LookRotation(transform.forward, targetDirection);
         Quaternion rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, RotationSpeed * Time.deltaTime);
@@ -55,13 +70,6 @@ public class EnemyBehaviourScript : MonoBehaviour
 
     private void SetVelocity()
     {
-        if (targetDirection == Vector2.zero)
-        {
-            rigidbody2d.velocity = Vector2.zero;
-        }
-        else
-        {
-            rigidbody2d.velocity = transform.up * Speed;
-        }
+        rigidbody2d.velocity = transform.up * Speed;
     }
 }
