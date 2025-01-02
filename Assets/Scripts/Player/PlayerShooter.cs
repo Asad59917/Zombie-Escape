@@ -43,10 +43,12 @@ public class PlayerShooter : MonoBehaviour
         Rigidbody2D rigidbody2D = bullet.GetComponent<Rigidbody2D>();
 
         rigidbody2D.velocity = BulletSpeed * transform.up;
+        SoundManager.instance.PlayShootingSound();
     }
 
     private void OnFire(InputValue inputValue) 
     {
         FireContiniously = inputValue.isPressed;
+        
     }
 }

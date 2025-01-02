@@ -60,5 +60,6 @@ public class PlayerMovement : MonoBehaviour
     private void OnMove(InputValue inputValue)
     {
         MovementInput = inputValue.Get<Vector2>();
+
     }
 }
