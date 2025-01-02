@@ -60,6 +60,14 @@ public class SoundManager : MonoBehaviour
 
     }
 
+    public void Spawnsound()
+
+    {
+
+        audioSource.PlayOneShot(SpawnSound);
+
+    }
+
 
 
 }

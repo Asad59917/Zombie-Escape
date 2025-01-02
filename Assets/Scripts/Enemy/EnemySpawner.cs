@@ -29,6 +29,7 @@ public class EnemySpawner : MonoBehaviour
         {
             Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
             SetTimeUntillSpwan();
+            SoundManager.instance.Spawnsound();
         }
     }
     private void SetTimeUntillSpwan()
