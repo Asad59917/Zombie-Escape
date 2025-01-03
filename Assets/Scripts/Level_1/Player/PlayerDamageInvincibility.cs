@@ -6,6 +6,13 @@ public class PlayerDamageInvincibility : MonoBehaviour
 {
     [SerializeField]
     private float m_InvincibilityMultiplier;
+
+    [SerializeField]
+    private Color _flashColor;
+
+    [SerializeField]
+    private int _numberOfFlashes;
+
     private  InvincibilityController _invincibilitycontroller;
 
     private void Awake()
@@ -14,6 +21,6 @@ public class PlayerDamageInvincibility : MonoBehaviour
     }
     public void StartInvincibilty()
     {
-        _invincibilitycontroller.StartInvincibility(m_InvincibilityMultiplier);
+        _invincibilitycontroller.StartInvincibility(m_InvincibilityMultiplier, _flashColor, _numberOfFlashes);
     }
 }

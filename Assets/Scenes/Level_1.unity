@@ -153,11 +153,12 @@ RectTransform:
   m_Children:
   - {fileID: 1208685827}
   - {fileID: 566501733}
+  - {fileID: 1508459232}
   m_Father: {fileID: 1150055827}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -20}
+  m_AnchoredPosition: {x: 53.9, y: -20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &59749066
@@ -173,6 +174,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthBarForegroundImage: {fileID: 566501734}
+--- !u!1 &85434030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 85434032}
+  - component: {fileID: 85434031}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &85434031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85434030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 644490d82031fc8468cfc46bafec0a37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeToWaitBeforeExit: 3
+--- !u!4 &85434032
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 85434030}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.5819483, y: 0.027885184, z: -0.11940871}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &122388122
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,6 +452,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6844511363023408238, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (3)
@@ -688,6 +742,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6844511363023408238, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (2)
@@ -940,7 +1002,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.87
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1023,7 +1085,6 @@ GameObject:
   - component: {fileID: 563755774}
   - component: {fileID: 563755778}
   - component: {fileID: 563755779}
-  - component: {fileID: 563755780}
   - component: {fileID: 563755781}
   - component: {fileID: 563755782}
   - component: {fileID: 563755784}
@@ -1031,6 +1092,7 @@ GameObject:
   - component: {fileID: 563755785}
   - component: {fileID: 563755786}
   - component: {fileID: 563755787}
+  - component: {fileID: 563755788}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1161,58 +1223,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!212 &563755780
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 563755773}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: -49
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!114 &563755781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1306,6 +1316,18 @@ MonoBehaviour:
           m_StringArgument: IsDead
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 85434031}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: OnplayerDied
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: IsDead
+          m_BoolArgument: 0
+        m_CallState: 2
   OnDamaged:
     m_PersistentCalls:
       m_Calls:
@@ -1349,6 +1371,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InvincibilityMultiplier: 3
+  _flashColor: {r: 1, g: 1, b: 1, a: 0.50980395}
+  _numberOfFlashes: 10
 --- !u!114 &563755784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1492,6 +1516,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &563755788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 563755773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cee2f9ae6a5b584dba7a4006780029a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &566501732
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,6 +1950,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6844511363023408238, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (5)
@@ -2275,7 +2319,7 @@ GameObject:
   - component: {fileID: 987906366}
   - component: {fileID: 987906368}
   m_Layer: 0
-  m_Name: playerFollow
+  m_Name: playerFollowCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2303,7 +2347,7 @@ MonoBehaviour:
   m_Follow: {fileID: 563755777}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 4.87
+    OrthographicSize: 5.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -2995,6 +3039,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6844511363023408238, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
       propertyPath: m_Name
       value: EnemySpawner
@@ -4316,6 +4368,81 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1707327925081157369, guid: 04ba075a3da3e2a4c86b437f6b4401c1, type: 3}
   m_PrefabInstance: {fileID: 447888305428925271}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1508459231
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508459232}
+  - component: {fileID: 1508459234}
+  - component: {fileID: 1508459233}
+  m_Layer: 5
+  m_Name: Heart
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1508459232
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508459231}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 59749065}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -60.1, y: 13.7}
+  m_SizeDelta: {x: 203.59, y: 201.805}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1508459233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508459231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 386f64920ac3f9f43a8ac560d2c0e9bd, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1508459234
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508459231}
+  m_CullTransparentMesh: 1
 --- !u!1 &1535293223
 GameObject:
   m_ObjectHideFlags: 0
@@ -4355,6 +4482,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6844511363023408238, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (4)
@@ -14782,6 +14917,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -6017628786363078829, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6844511363023408238, guid: 947889d19c5c01542b023cfa09698b6b, type: 3}
       propertyPath: m_Name
       value: EnemySpawner (1)
@@ -15163,3 +15306,4 @@ SceneRoots:
   - {fileID: 844761291}
   - {fileID: 216204424}
   - {fileID: 568420520}
+  - {fileID: 85434032}
