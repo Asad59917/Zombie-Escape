@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     private float _timeToWaitBeforeExit = 3.0f; // Time to wait before exiting on death
     [SerializeField]
     private TextMeshProUGUI timerText; // Reference to the TextMeshProUGUI for the timer
-    private float _survivalTime = 30.0f; // Time the player must survive
+    private float _survivalTime = 120.0f; // Time the player must survive
     private float _currentTime;
     private bool _isGameActive;
 
