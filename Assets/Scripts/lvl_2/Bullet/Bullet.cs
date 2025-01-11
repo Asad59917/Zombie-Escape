@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDestroy : MonoBehaviour
+public class EnemyDestroy2 : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6871555358415522689}
   - component: {fileID: -6017628786363078829}
-  - component: {fileID: -388628265633180187}
+  - component: {fileID: 7961251494543277969}
   m_Layer: 0
-  m_Name: EnemySpawner
+  m_Name: EnemySpawnerLvl2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-388628265633180187
+--- !u!114 &7961251494543277969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,9 +94,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6844511363023408238}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df600400d885ef499cbc660d31bcaee, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eb213172523c9f45b975c7b771511f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyPrefab: {fileID: 8589942478338276621, guid: 11fb40abffa6d3547a83581656368cec, type: 3}
-  MinimumSpawnTime: 2
-  MaxSpawnTime: 4
+  EnemyPrefab: {fileID: 8589942478338276621, guid: 1cf5ad2c934379e47a13955695f2e5f6, type: 3}
+  EnemyPrefab2: {fileID: 8589942478338276621, guid: 2d4f9d23f5c75ee45a6e81fc32e9b204, type: 3}
+  MinimumSpawnTime: 1
+  MaxSpawnTime: 3
