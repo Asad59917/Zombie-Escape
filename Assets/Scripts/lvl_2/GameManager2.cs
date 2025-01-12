@@ -56,6 +56,6 @@ public class GameManager2 : MonoBehaviour
     private void NextLevel()
     {
         _isGameActive = false; // Stop the timer
-        SceneManager.LoadScene("Level_2"); // Load Level 2 scene
+        SceneManager.LoadScene("Mission_Passed"); // Load Level 2 scene
     }
 }
