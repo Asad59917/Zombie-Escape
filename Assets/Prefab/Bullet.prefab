@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7f483d5fc50b2349902ba3be4254b6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WallsDestroyParticle: {fileID: 5714449453316430518, guid: f7033bb4dd3caa24f8f2371a1153ba8a, type: 3}
 --- !u!1 &6951255732348672698
 GameObject:
   m_ObjectHideFlags: 0

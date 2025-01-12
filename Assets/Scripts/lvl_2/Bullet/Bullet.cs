@@ -6,6 +6,8 @@ public class EnemyDestroy2 : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
+
         // Destroy enemy when bullet collides with it
         if (collision.CompareTag("Enemy"))
         {
@@ -16,10 +18,17 @@ public class EnemyDestroy2 : MonoBehaviour
         // Destroy wall tileset when bullet collides with it
         if (collision.CompareTag("Walls"))
         {
+            GameObject enemyExlpotion = Instantiate(WallsDestroyParticle, transform.position, transform.rotation);
+            Destroy(enemyExlpotion, 0.75f);
+
+
             Destroy(collision.gameObject);
             Destroy(gameObject);
+
         }
     }
+
+    public GameObject WallsDestroyParticle;
 
     // Start is called before the first frame update
     void Start()

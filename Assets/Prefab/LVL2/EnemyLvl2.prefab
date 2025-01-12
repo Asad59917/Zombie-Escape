@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f2bef76c84eea4aaabcc6fe816a84b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerAwarnessDistance: 20
+  PlayerAwarnessDistance: 15
 --- !u!114 &4541894470724323707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e9e91fc339607340becf77ad6495966, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  Speed: 2
   RotationSpeed: 150
   isNPC: 0
 --- !u!114 &7623673327905493796
@@ -245,4 +245,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacfee3fca7da2143b7c61995f4a5bd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AmountDamaged: 15
+  AmountDamaged: 10
